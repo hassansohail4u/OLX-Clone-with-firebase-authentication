@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX - Buy and Sell for free anywhere in Pakistan with OLX online classifieds</title>
+    <link rel="stylesheet" href="./styling/style.css">
+    <link rel="stylesheet" href="./styling/navbar.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!-- navbar started -->
+    <div class="main-navbar">
+     <div class="navbar">   
+
+        
+        <div class="d-flex flex-wrap nav1-container">
+        <div>
+            <img src="./assets/OLX Logo" alt="Logo" class="logo mt-1">
+        </div>
+
+        <div class="d-flex  flex-wrap cursor-pointer">
+            <i class="fa-solid fa-car nav-icons fs-5 rounded-circle mb-3 me-2"></i> <p class="nav-heading">Motors</p>
+        </div>
+
+        <div class="d-flex flex-wrap cursor-pointer">
+            <i class="fa-regular fa-building nav-icons rounded-circle property mb-3 me-2"></i> <p class="nav-heading">Property</p>
+        </div>
+       <div class="d-flex flex-wrap cursor-pointer" onclick="checkOut()">
+        <i class="fa-solid fa-cart-shopping rounded-circle cart-icon"></i> <p class="nav-heading">Cart</p>
+       </div>
+    </div>
+
+<div class="d-flex flex-wrap gap-3 nav2-container">
+   
+
+    <div>
+
+        <select class="drop-down ps-2 cursor-pointer">
+            <option>Pakistan</option>
+            <option>Azad Kashmir, Pakistan</option>
+            <option>Balochistan, Pakistan</option>
+            <option>Islamabad Capital Territory, Pakistan</option>
+            <option>Khyber Pakhtunkhwa, Pakistan</option>
+            <option>Northen Areas, Pakistan</option>
+            <option>Punjab, Pakistan</option>
+            <option>Sindh, Pakistan</option>
+        </select>
+    </div>
+
+    <div>
+        <input type="text" placeholder="Search the Items" class="input ps-2" id="user-input"><i class="fa-solid fa-magnifying-glass search-icon"></i>
+    </div>
+
+    <div class="d-flex flex-wrap gap-4 align-items-center ms-3">
+        <p class="login cursor-pointer" id="logOut-btn">Logout</p>
+        <p class="sell cursor-pointer"><i class="fa-solid fa-plus plus-icon"></i> SELL</p>
+    </div>
+</div>
+</div>
+</div>
+
+
+<hr class="hr">
+
+
+<div class="d-flex flex-wrap nav3-container gap-3">
+    <select class="categories-option cursor-pointer">
+        <option>ALL CATEGORIES</option>
+        <option>Properties</option>
+        <option>Services</option>
+        <option>Jobs</option>
+        <option>Furniture</option>
+        <option>Home Decoration</option>
+        <option>Clothes</option>
+        <option>Books</option>
+        <option>Sports</option>
+        <option>Kids</option>
+    </select>
+
+    <p class="mt-3 nav3-heading cursor-pointer" onclick="filter(this)">Beauty</p>
+    <p class="mt-3 nav3-heading cursor-pointer" onclick="filter(this)">Fragrances</p>
+    <p class="mt-3 nav3-heading cursor-pointer" onclick="filter(this)">Furniture</p>
+    <p class="mt-3 nav3-heading cursor-pointer" onclick="filter(this)">Groceries</p>
+    <p class="mt-3 nav3-heading cursor-pointer">Video-Audios</p>
+    <p class="mt-3 nav3-heading cursor-pointer">Tablets</p>
+    <p class="mt-3 nav3-heading cursor-pointer" onclick="allItems()">All</p>
+</div>
+
+
+    <!-- navbar ended -->
+
+       <!-- Carousel Started -->
+       <div id="carouselExampleRide" class="carousel slide head" data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item  active cursor-pointer">
+            <img src="./assets/OLX Discounts PIC .jfif" class="d-block w-100 carousel-pictures" alt="Carousel Pictures">
+          </div>
+          <div class="carousel-item cursor-pointer">
+            <img src="./assets/OLX Discounts  2.jfif" class="d-block w-100 carousel-pictures" alt="Carousel Pictures">
+          </div>
+          <div class="carousel-item cursor-pointer">
+            <img src="./assets/OLX Discounts  3.jfif" class="d-block w-100 carousel-pictures" alt="Carousel Pictures">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+     <!-- Carousel ended -->
+
+
+
+     <div class="whole-website">
+
+        <h4 class="categories">All Categories</h4>
+        <div class="d-flex flex-wrap categories-container">
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic  1.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Mobiles</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 2.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Vehicles</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 3.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Property For Sale</p>
+            </div>
+
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 4.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Property For Rent</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 5.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Electronics & Home Appliances</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 6.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading ms-4">Bikes</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 7.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Business Industrial & Agriculture</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 8.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading ms-3">Services</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 9.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading ms-4">Jobs</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 10.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading cursor-pointer" onclick="filter(this)">Groceries</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 11.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading cursor-pointer" onclick="filter(this)">Furniture</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img   src="./assets/Categories Pic 12.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading cursor-pointer" onclick="filter(this)">Beauty</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 13.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading">Books, Sports & Hobbies</p>
+            </div>
+
+            <div class="categories-boxs">
+                <img src="./assets/Categories Pic 14.png" alt="Category Picture" class="categories-pic cursor-pointer">
+                <p class="Categories-heading ms-4">Kids</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="d-flex flex-wrap justify-content-center gap-4 text-center products-container" id="container">
+       
+    </div>
+
+
+<div class="footer-2 d-flex flex-wrap justify-content-center">
+    <div class=" d-flex flex-wrap footer2-part1">
+<div>
+        <img src="./assets/footer Picture.webp" alt="footer Picture">
+
+    </div>
+    <div class="footer2-part1-step2">
+        <h2 class="footer2-heading">TRY THE OLX APP</h2>
+        <p class="footer2-paragraph">Buy, sell and find just about anything using <br> the app on your mobile.</p>
+    </div>
+    </div>
+
+    <div class="footer2-part2">
+        <p class="footer2-part2-para">Get your app today</p>
+        <div>
+            <a href="https://www.apple.com/app-store/"><img src="./assets/Follow pic-1.svg" alt="follow-pics" class="footer2-pics"></a>
+            <a href="https://play.google.com/store/games?hl=en"><img src="./assets/follow pic 2.svg" alt="follow-pics" class="footer2-pics me-2"></a>
+            <a href="https://consumer.huawei.com/en/mobileservices/appgallery/"><img src="./assets/follow pic 3.svg" alt="follow-pics" class="footer2-pics me-2"></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- footer -->
+
+<div class="d-flex flex-wrap justify-content-evenly info-box">
+    <div>
+      <h6>POPULAR CATEGORIES</h6>
+      <a href="#" class="text-decoration-none text-light-emphasis">Cars</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Flats for rent</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Mobile Phones</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Jobs</a><br>
+    </div>
+
+    <div>
+      <h6>TRENDING SEARCHES</h6>
+      <a href="#" class="text-decoration-none text-light-emphasis">Bikes</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Watches</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Books</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Dogs</a><br>
+    </div>
+
+    <div>
+      <h6>ABOUT US</h6>
+      <a href="#" class="text-decoration-none text-light-emphasis">About Dubizzle Group</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">OLX Blogs</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Contact Us</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">OLX for Businesses</a><br>
+    </div>
+
+    <div>
+      <h6>OLX</h6>
+      <a href="#" class="text-decoration-none text-light-emphasis">Help</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Sitemap</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Terms of use</a><br>
+      <a href="#" class="text-decoration-none text-light-emphasis">Privacy Policy</a><br>
+    </div>
+
+    <div>
+      <h6>FOLLOW US</h6>
+      <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter icons rounded-circle p-1 me-1"></i></a>
+      <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f  icons facebook rounded-circle px-2 py-1 me-1"></i></a>
+      <a href="https://www.youtube.com"><i class="fa-solid fa-play icons play rounded-circle  me-1"></i></a>
+      <a href="https://www.instagram.com"><i class="fa-brands fa-instagram icons rounded-circle instagram me-1 mb-4"></i></a>
+
+      <div>
+      <a href="https://www.apple.com/app-store/"><img src="./assets/Follow pic-1.svg" alt="follow-pics" class="follow-pics"></a>
+      <a href="https://play.google.com/store/games?hl=en"><img src="./assets/follow pic 2.svg" alt="follow-pics" class="follow-pics"></a>
+      <a href="https://consumer.huawei.com/en/mobileservices/appgallery/"><img src="./assets/follow pic 3.svg" alt="follow-pics" class="follow-pics"></a>
+    </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+  <div class=" info-end d-flex flex-wrap justify-content-around ">
+    <p class="text-white mt-2">Free Classifieds in Pakistan . © 2006-2024 OLX</p>
+
+    <p  class="text-white mt-2">Powered By Muhammad Hassan Duroodwala</p>
+  </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/45548dcf7e.js" crossorigin="anonymous"></script>
+    <script type="module" src="./home.js"></script>
+</body>
+</html>
