@@ -7,6 +7,7 @@ const townName = document.querySelector("#town-name")
 const table = document.querySelector(".cart-table")
 const calculateShippingBtn = document.querySelector("#calculate-shipping-btn")
 const postalCode = document.querySelector("#postal-code")
+const shippingRate = document.querySelector("#shipping-estimate")
 
 
 OLXCartItems.map((items) => {
@@ -329,16 +330,10 @@ var countriesDetails = [
   })
 
   calculateShippingBtn.addEventListener("click" , () => {
-    // console.log(countryName.value);
-    // console.log(cityName.value);
-    // console.log(townName.value);
-    // console.log(postalCode.value);
     const countryIndex = countriesDetails.findIndex(items => items.country == countryName.value)
     const cityIndex = countriesDetails[countryIndex].cities.findIndex(items => items.city == cityName.value);
     const townIndex = countriesDetails[countryIndex].cities[cityIndex].towns.findIndex(items => items.town == townName.value)
     
-    // console.log(countriesDetails[countryIndex].cities[cityIndex].towns[townIndex].shipping_rate);
-    // console.log(countriesDetails[countryIndex].cities[cityIndex].towns[townIndex].postal_code);
 
     const countriesPostalCode = countriesDetails[countryIndex].cities[cityIndex].towns[townIndex].postal_code;
     const countriesShippingRate = countriesDetails[countryIndex].cities[cityIndex].towns[townIndex].shipping_rate;
@@ -348,7 +343,7 @@ var countriesDetails = [
     }
     else {
       if (countriesPostalCode == postalCode.value) {
-        console.log(countriesShippingRate);
+        shippingRate.innerHTML = `Shipping Rate: ${countriesShippingRate}`
         
       }else{
         alert("Invalid Postal Code")
