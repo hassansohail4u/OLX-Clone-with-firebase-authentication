@@ -151,5 +151,5 @@ function addToCart(){
 function backBtn(){
   
 
-  location = "./index.html"
+  location = "./home.html"
 }

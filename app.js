@@ -5,9 +5,8 @@ var form = document.querySelector("#form")
 var email = document.querySelector("#user-email")
 var password = document.querySelector("#user-password")
 
-
 form.addEventListener("submit" , (events) => {
-    events.preventDefault()
+  events.preventDefault()
 
     signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
@@ -20,7 +19,7 @@ form.addEventListener("submit" , (events) => {
     password.value = ""
       
     })
-    .catch((error) => {
+    .catch((error) => { 
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorMessage);

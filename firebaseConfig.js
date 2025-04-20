@@ -12,6 +12,5 @@
     measurementId: "G-54DD6G7LBV"
   };
 
-  // Initialize Firebase
  export const app = initializeApp(firebaseConfig);
  export const auth = getAuth(app);

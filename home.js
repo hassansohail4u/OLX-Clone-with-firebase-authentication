@@ -1,34 +1,6 @@
-
-import {onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js"
-import { auth } from "./firebaseConfig.js"
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      console.log(uid);
-      
-
-    } else {
-      console.log("User is signed out");
-      window.location = "./index.html"
-    }
-  });
-  const logOut = document.querySelector("#logOut-btn")
-
-  logOut.addEventListener("click" , () => {
-    signOut(auth).then(() => {
-        console.log("LogOut successfully");
-        window.location = "./index.html"
-        
-      }).catch((error) => {
-        console.log(error);
-        alert(error)
-        
-      });
-  })
-
-
-
+// console.log("Hello World!");
+import { auth } from "./firebaseConfig.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 const div = document.querySelector("#container")
 const input = document.querySelector("#user-input")
@@ -100,7 +72,8 @@ function searchItems() {
 console.log("Hello".toLowerCase());
 
 
-function filter(btnName) {
+function filter(btnName){
+    console.log("Hello");
     
     div.innerHTML = ""
 
@@ -133,11 +106,15 @@ function filter(btnName) {
       })
 }
 
+window.filter = filter;
+
 function allItems(){
     div.innerHTML = ""
 
     render()
 }
+
+window.allItems = allItems;
 
 
 
@@ -150,7 +127,7 @@ function seeMore(id){
     location = "./singleCart.html"
 }
 
-
+window.seeMore = seeMore;
 
 var OLXCartItems = JSON.parse(localStorage.getItem("OLXCartItems"))
 
@@ -194,12 +171,29 @@ function filterAddToCart(index) {
     addProductToCart(filterProducts, index);
 }
 
+const logOut = document.querySelector("#log-out")
+logOut.addEventListener("click" , () => {
+
+    signOut(auth).then(() => {
+      window.location = "./index.html"
+    }).catch((error) => {
+        alert(error)
+    });
+})
+
+window.addToCart = addToCart;
+window.searchAddToCart = searchAddToCart;
+window.filterAddToCart = filterAddToCart
 
 
 
-function checkOut(){
-    var convertCartItemsArr = JSON.stringify(cartItems)
-    localStorage.setItem("OLXCartItems" , convertCartItemsArr)
-}
+const checkOut = document.querySelector("#check-out")
 
+checkOut.addEventListener("click" , () => {
 
+    window.location = "./checkout.html"
+    
+})
+
+// var activeUsers = JSON.parse(localStorage.getItem("activeUsers"))
+// console.log(activeUsers);
